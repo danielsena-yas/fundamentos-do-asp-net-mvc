@@ -8,26 +8,26 @@ namespace PrimeiraApp.Controllers
     public class TestesController : Controller
     {
         [HttpGet("")]
-        public ActionResult Index()
+        public IActionResult Index()
         {
-            return View();
+            return View(new { });
         }
 
         [HttpGet("detalhes/{id:int}/{id2?}")]
-        public ActionResult Details(int id, int id2 = 0)
+        public IActionResult Details(int id, int id2 = 0)
         {
             return View();
         }
 
         [HttpGet("criar")]
-        public ActionResult Create()
+        public IActionResult Create()
         {
             return View();
         }
 
         [HttpPost("/criar")]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([FromForm] IFormCollection collection)
+        public IActionResult Create([FromForm] IFormCollection collection)
         {
             try
             {
@@ -40,14 +40,14 @@ namespace PrimeiraApp.Controllers
         }
 
         [HttpGet("editar/{id:int}")]
-        public ActionResult Edit(int id)
+        public IActionResult Edit(int id)
         {
             return View();
         }
 
         [HttpPost("editar/{id:int}")]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, [FromForm] IFormCollection collection)
+        public IActionResult Edit(int id, [FromForm] IFormCollection collection)
         {
             try
             {
@@ -60,14 +60,14 @@ namespace PrimeiraApp.Controllers
         }
 
         [HttpGet("excluir/{id:int}")]
-        public ActionResult Delete(int id)
+        public IActionResult Delete(int id)
         {
             return View();
         }
 
         [HttpPost("excluir/{id:int}")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public IActionResult Delete(int id, IFormCollection collection)
         {
             try
             {
